@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-height">
+  <title>电影数据分析</title>
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    @font-face {
+      font-family: "Ubuntu Condensed";
+      src: url("static/UbuntuCondensed-Regular.ttf");
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: 'Ubuntu Condensed';
+      height: 100%;
+      margin: 0;
+      color: rgba(0.5, 0.3, 0, 0.85);
+      background-color: rgb(249, 226, 229);
+    }
+
+    .container {
+      width: 65%;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: rgba(0, 0, 0, 0.75);
+    }
+
+    h2>small {
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    .chart-group {
+      width: 100%;
+      height: 610px;
+      position: relative;
+    }
+
+    .keywords {
+      margin-top: -70px;
+      padding: 96px;
+    }
+
+    .frame {
+      width: 100%;
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="font-size: 40px;"># TMDB 电影数据分析<br> <small style="font-size: 55%;color: rgba(0,0,0,0.65);">>
+        基于spark的大数据分析</small> </h1>
+    <hr>
+    <h1 style="font-size: 30px;color: #404040;">I. 分析</h1>
+    <div class="chart-group">
+      <h2>- 电影数据中类型的分布  </h2>
+      <iframe src="genres.html" class="frame" frameborder="0"></iframe>
+    </div>
+
+    <div class="chart-group">
+      <h2>- 此电影数据中的关键词分布（仅显示前100个关键词）</h2>
+      <iframe src="keywords.html" class="keywords frame" frameborder="0"></iframe>
+    </div>
+
+    <div class="chart-group">
+      <h2>- 电影数据中的电影时长分布 <!--(只统计电影时长超过80分钟)--> </h2>
+      <iframe src="runtime.html" class="frame" frameborder="0"></iframe>
+    </div>
+
+    <div class="chart-group">
+      <h2>- 此电影数据中最多使用的10种语言</h2>
+      <iframe src="lang.html" class="keywords frame" frameborder="0"></iframe>
+    </div>
+
+    <h1 style="font-size: 30px;">II. 关系</h1>
+    <div class="chart-group">
+      <h2>- 电影上映日期和评分的关系</h2>
+      <iframe src="date_vote.html" class="frame" frameborder="0"></iframe>
+    </div>
+
+    <div class="chart-group">
+      <h2>- 评分和收视率之间的关系 </h2>
+      <iframe src="pop_vote.html" class="frame" frameborder="0"></iframe>
+    </div>
+
+  </div>
+
+  <script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+</body>
+
+</html>
